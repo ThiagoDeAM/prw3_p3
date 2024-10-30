@@ -6,6 +6,7 @@ import com.example.prw3_p3.veiculo.Veiculo;
 import java.time.LocalDate;
 
 public record DadosListagemConserto(
+        Long id,
         LocalDate entrada,
         LocalDate saida,
         String nome,
@@ -14,6 +15,7 @@ public record DadosListagemConserto(
 ) {
     public DadosListagemConserto(Conserto conserto) {
         this(
+                conserto.getId(),
                 conserto.getEntrada(),
                 conserto.getSaida(),
                 conserto.getMecanico().getNome(),
